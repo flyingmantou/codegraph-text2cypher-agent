@@ -1,0 +1,7 @@
+{
+  "typescript": "6.0.3",
+  "kind": "syntax-only",
+  "files": 34,
+  "errors": [],
+  "fullTypecheck": false
+}

@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ESNext","module":"NodeNext","moduleResolution":"NodeNext","strict":true,"allowImportingTsExtensions":true,"noEmit":true,"skipLibCheck":true,"types":["node"]},"include":["contracts/**/*.ts","packages/**/*.ts","scripts/**/*.ts"]}

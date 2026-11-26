@@ -1,0 +1,112 @@
+{
+  "createdAt": "2026-11-25T13:41:12.452Z",
+  "kind": "live-api-on-fixture",
+  "graph": "fixture",
+  "runtime": "standalone-workbench",
+  "maxRequests": 17,
+  "requestAttempts": 3,
+  "models": [
+    {
+      "model": "deepseek-flash",
+      "provider": "deepseek",
+      "status": "not_passed",
+      "requests": [
+        {
+          "httpStatus": null,
+          "responseModel": null,
+          "networkCode": "ENOTFOUND"
+        }
+      ],
+      "cases": [
+        {
+          "id": "DEV-01",
+          "status": "failed",
+          "passed": false,
+          "assertions": [
+            "status: expected success, received failed",
+            "evidence node set mismatch"
+          ],
+          "elapsedMs": 28,
+          "errorCode": "MODEL_NETWORK_ERROR",
+          "usage": {
+            "modelCalls": 1,
+            "toolCalls": 1,
+            "promptTokens": 0,
+            "completionTokens": 0,
+            "estimatedCostCny": null
+          },
+          "evidenceCount": 0,
+          "nodeCount": 0,
+          "source": {
+            "graph": "fixture",
+            "model": "deepseek",
+            "graphVersion": "fixture-train-ticket-v1",
+            "modelName": "deepseek-flash",
+            "skillVersion": "2.0.0",
+            "runtime": "standalone-workbench"
+          }
+        }
+      ]
+    },
+    {
+      "model": "glm-5.3",
+      "provider": "glm",
+      "status": "not_passed",
+      "requests": [
+        {
+          "httpStatus": null,
+          "responseModel": null,
+          "networkCode": "ENOTFOUND"
+        }
+      ],
+      "cases": [
+        {
+          "id": "DEV-01",
+          "status": "failed",
+          "passed": false,
+          "assertions": [
+            "status: expected success, received failed",
+            "evidence node set mismatch"
+          ],
+          "elapsedMs": 1,
+          "errorCode": "MODEL_NETWORK_ERROR",
+          "usage": {
+            "modelCalls": 1,
+            "toolCalls": 1,
+            "promptTokens": 0,
+            "completionTokens": 0,
+            "estimatedCostCny": null
+          },
+          "evidenceCount": 0,
+          "nodeCount": 0,
+          "source": {
+            "graph": "fixture",
+            "model": "glm",
+            "graphVersion": "fixture-train-ticket-v1",
+            "modelName": "glm-5.3",
+            "skillVersion": "2.0.0",
+            "runtime": "standalone-workbench"
+          }
+        }
+      ]
+    },
+    {
+      "model": "glm-5.4",
+      "provider": "glm",
+      "status": "probe_failed",
+      "requests": [
+        {
+          "httpStatus": null,
+          "responseModel": null,
+          "networkCode": "ENOTFOUND"
+        }
+      ],
+      "cases": [],
+      "elapsedMs": 1
+    }
+  ],
+  "limitations": [
+    "人工fixture和固定Cypher模板，仅测试接入和证据链，不是课程真实Neo4j验收或模型能力排名。",
+    "GLM-5.4普通模型API官方待开放，仅探测计划接口，不切Coding Plan。"
+  ]
+}

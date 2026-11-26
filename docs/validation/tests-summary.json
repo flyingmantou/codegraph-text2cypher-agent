@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-25",
+  "command": "node scripts/test.mjs",
+  "tests": 68,
+  "pass": 68,
+  "fail": 0,
+  "skipped": 0,
+  "scope": "fixture, mock model, fake dsh registry, real MCP stdio child process, in-process HTTP handler, Web pure functions",
+  "moduleCounts": {
+    "harness_http_runner_dsh": 27,
+    "skills": 9,
+    "tools": 23,
+    "web": 9
+  }
+}

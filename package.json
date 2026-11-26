@@ -1,0 +1,21 @@
+{
+  "name": "codegraph-text2cypher-agent",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Four-module codegraph query workbench for the course midterm",
+  "engines": {
+    "node": ">=24.22.3"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env packages/harness/src/http.ts",
+    "test": "node scripts/test.mjs",
+    "verify:examples": "node --env-file-if-exists=.env scripts/verify-examples.ts",
+    "evaluate:dev": "node packages/skills/scripts/evaluate.ts",
+    "test:live": "node --env-file-if-exists=.env scripts/test-live.ts",
+    "mcp": "node --env-file-if-exists=.env packages/tools/src/mcp.ts",
+    "check:ownership": "node scripts/check-ownership.ts",
+    "release": "python3 scripts/release.py",
+    "check:integration": "node scripts/check-integration.ts"
+  }
+}
