@@ -1,0 +1,489 @@
+{
+  "name": "course-independent-evaluation-template",
+  "status": "unfilled-not-frozen",
+  "purpose": "30个题位模板，不是已经编写或通过的独立测试集。真实课程图谱接入后人工填写、复核并冻结；不得加入示例库。",
+  "graphVersion": null,
+  "modelConfig": null,
+  "cases": [
+    {
+      "id": "S1",
+      "complexity": "simple",
+      "coverage": "单节点",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S2",
+      "complexity": "simple",
+      "coverage": "属性过滤",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S3",
+      "complexity": "simple",
+      "coverage": "单跳归属",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S4",
+      "complexity": "simple",
+      "coverage": "基础计数",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S5",
+      "complexity": "simple",
+      "coverage": "单节点",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S6",
+      "complexity": "simple",
+      "coverage": "属性过滤",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S7",
+      "complexity": "simple",
+      "coverage": "单跳归属",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S8",
+      "complexity": "simple",
+      "coverage": "基础计数",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S9",
+      "complexity": "simple",
+      "coverage": "单节点",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "S10",
+      "complexity": "simple",
+      "coverage": "属性过滤",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M1",
+      "complexity": "medium",
+      "coverage": "多跳调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M2",
+      "complexity": "medium",
+      "coverage": "反向调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M3",
+      "complexity": "medium",
+      "coverage": "聚合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M4",
+      "complexity": "medium",
+      "coverage": "简单MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M5",
+      "complexity": "medium",
+      "coverage": "多跳调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M6",
+      "complexity": "medium",
+      "coverage": "反向调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M7",
+      "complexity": "medium",
+      "coverage": "聚合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M8",
+      "complexity": "medium",
+      "coverage": "简单MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M9",
+      "complexity": "medium",
+      "coverage": "多跳调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M10",
+      "complexity": "medium",
+      "coverage": "反向调用",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M11",
+      "complexity": "medium",
+      "coverage": "聚合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "M12",
+      "complexity": "medium",
+      "coverage": "简单MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H1",
+      "complexity": "hard",
+      "coverage": "跨服务RPC+MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H2",
+      "complexity": "hard",
+      "coverage": "多子图联合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H3",
+      "complexity": "hard",
+      "coverage": "影响分析",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H4",
+      "complexity": "hard",
+      "coverage": "跨服务RPC+MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H5",
+      "complexity": "hard",
+      "coverage": "多子图联合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H6",
+      "complexity": "hard",
+      "coverage": "影响分析",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H7",
+      "complexity": "hard",
+      "coverage": "跨服务RPC+MQ",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    },
+    {
+      "id": "H8",
+      "complexity": "hard",
+      "coverage": "多子图联合",
+      "question": null,
+      "entityIds": [],
+      "referenceCypher": null,
+      "expectedResult": null,
+      "expectedEvidence": [],
+      "manualReview": {
+        "reviewer": null,
+        "graphVersion": null,
+        "reviewedAt": null,
+        "status": "pending"
+      }
+    }
+  ]
+}
