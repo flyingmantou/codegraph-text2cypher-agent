@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>CodeGraph · 查询工作台</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#query"><span class="brand-icon" aria-hidden="true">⌘</span><span>CodeGraph<small>Text2Cypher 查询智能体</small></span></a>
+    <p class="nav-caption">工作空间</p>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-page="query" aria-current="page"><span aria-hidden="true">⌕</span>查询工作台</button>
+      <button class="nav-item" data-page="examples"><span aria-hidden="true">▤</span>示例知识库</button>
+      <button class="nav-item" data-page="guide"><span aria-hidden="true">ⓘ</span>运行说明</button>
+    </nav>
+    <div class="sidebar-footer"><span class="dot"></span>课程中期原型<small>代码关系理解 · 可追溯查询</small></div>
+  </aside>
+
+  <main id="main-content" tabindex="-1">
+    <header class="topbar"><div class="breadcrumb">高级软件工程 <span>/</span> <strong id="page-title">查询工作台</strong></div><div class="mode-badges"><span id="graph-mode" class="badge">读取图谱…</span><span id="model-mode" class="badge">读取模型…</span><button id="refresh-health" class="icon-button" aria-label="刷新运行状态" title="刷新运行状态">↻</button></div></header>
+    <div id="global-message" class="message hidden" role="status" aria-live="polite"></div>
+    <div id="mode-warning" class="mode-warning hidden"></div>
+
+    <section id="page-query" class="page">
+      <div class="page-heading"><div><p class="eyebrow">QUERY WORKSPACE</p><h1>用自然语言，理解代码关系</h1><p class="subtitle">从问题到查询、执行结果和关系路径，每一步都有依据。</p></div><span class="small-label">只读查询</span></div>
+      <div class="workspace-grid">
+        <div class="main-column">
+          <section class="panel composer" aria-labelledby="ask-title">
+            <div class="section-title"><h2 id="ask-title">你想了解什么？</h2><span class="muted">支持中文提问</span></div>
+            <form id="query-form">
+              <fieldset class="difficulty-picker"><legend>查询难度</legend><label><input type="radio" name="complexity" value="simple" checked><span>简单<small>实体与属性</small></span></label><label><input type="radio" name="complexity" value="medium"><span>中等<small>调用与消息链</small></span></label><label><input type="radio" name="complexity" value="hard"><span>复杂<small>分支与联合分析</small></span></label></fieldset>
+              <label class="sr-only" for="question">查询问题</label>
+              <textarea id="question" name="question" rows="3" maxlength="2000" required placeholder="例如：getAllFood 方法依赖哪些下游服务？"></textarea>
+              <div class="composer-actions"><span class="muted">⌘ / Ctrl + Enter 提交</span><div class="inline-actions"><button id="query-cancel" class="button hidden" type="button">取消</button><button id="query-submit" class="button primary" type="submit">运行查询 <span aria-hidden="true">↗</span></button></div></div>
+            </form>
+            <div class="example-chips" aria-label="示例问题">
+              <button data-question="查询 getAllFood 方法">查找方法</button>
+              <button data-question="getAllFood 方法依赖哪些下游服务？">下游服务</button>
+              <button data-question="payOrder 的 MQ 消息链路是什么？">MQ 消息链路</button>
+              <button data-question="placeOrder 的 RPC 和 MQ 综合依赖是什么？">综合依赖</button>
+            </div>
+          </section>
+
+          <section id="result-panel" class="panel result-panel" aria-labelledby="result-title">
+            <div class="section-title"><h2 id="result-title">查询结果</h2><div class="inline-actions"><span id="result-status" class="badge neutral">等待查询</span><button id="download-report" class="button small" disabled>导出报告</button></div></div>
+            <div id="result-empty" class="empty-state"><div class="empty-symbol" aria-hidden="true">⌕</div><h3>从一个具体问题开始</h3><p>输入服务、方法或接口名称，查询相关实体和依赖路径。</p></div>
+            <div id="result-content" class="hidden">
+              <p id="result-summary" class="result-summary"></p>
+              <div id="result-warning" class="message warning hidden"></div>
+              <div id="clarification" class="clarification hidden" aria-label="选择同名实体"></div>
+              <section id="plan-panel" class="plan-panel hidden" aria-label="查询计划"><div class="section-title"><h3>查询计划</h3><span id="plan-summary" class="muted"></span></div><ol id="plan-list" class="plan-list"></ol></section>
+              <dl class="metrics"><div><dt>结果行数</dt><dd id="metric-rows">—</dd></div><div><dt>数据库耗时</dt><dd id="metric-time">—</dd></div><div><dt>模型调用</dt><dd id="metric-calls">—</dd></div><div><dt>工具调用</dt><dd id="metric-tools">—</dd></div><div><dt>总 Token</dt><dd id="metric-tokens">—</dd></div><div><dt>估算费用</dt><dd id="metric-cost">—</dd></div></dl>
+              <div class="tabs" role="tablist" aria-label="结果视图">
+                <button id="tab-data" class="tab active" role="tab" aria-selected="true" aria-controls="view-data" data-view="data">数据结果</button>
+                <button id="tab-graph" class="tab" role="tab" aria-selected="false" aria-controls="view-graph" data-view="graph">关系子图</button>
+                <button id="tab-cypher" class="tab" role="tab" aria-selected="false" aria-controls="view-cypher" data-view="cypher">Cypher</button>
+              </div>
+              <div id="view-data" class="result-view" role="tabpanel" aria-labelledby="tab-data"><div id="result-table" class="table-scroll"></div></div>
+              <div id="view-graph" class="result-view hidden" role="tabpanel" aria-labelledby="tab-graph"><div class="graph-toolbar"><span class="muted">点击节点查看属性</span><div><button id="zoom-out" class="icon-button" aria-label="缩小关系图">−</button><button id="zoom-reset" class="button small">重置</button><button id="zoom-in" class="icon-button" aria-label="放大关系图">＋</button></div></div><div id="graph-canvas" class="graph-canvas"></div><div id="node-detail" class="node-detail hidden"></div><details class="edge-details"><summary>查看关系明细</summary><div id="edge-table" class="table-scroll"></div></details></div>
+              <div id="view-cypher" class="result-view hidden" role="tabpanel" aria-labelledby="tab-cypher"><div id="query-code"></div></div>
+              <div id="evidence-list" class="evidence-list hidden"></div><p id="result-meta" class="result-meta"></p>
+            </div>
+          </section>
+        </div>
+
+        <div class="side-column">
+          <section class="panel trace-panel" aria-labelledby="trace-title"><div class="section-title"><h2 id="trace-title">执行过程</h2><span class="live-label">可追溯</span></div><ol id="trace-list" class="trace-list"><li class="trace-placeholder">查询后在这里查看 Schema 获取、检索、生成、校验与执行过程。</li></ol><div id="used-examples" class="used-examples hidden"></div></section>
+          <section class="panel batch-panel"><div class="section-title"><h2>批量查询</h2><span class="muted">最多 10 题</span></div><p class="muted">粘贴问题或上传 TXT / JSON 字符串数组，按当前难度逐题执行。</p><label class="batch-text-label" for="batch-text">每行一个问题<textarea id="batch-text" rows="4" placeholder="查询 getAllFood 方法&#10;payOrder 的 MQ 消息链路是什么？"></textarea></label><label class="upload-label" for="batch-file">选择问题文件<input id="batch-file" type="file" accept=".txt,.json,text/plain,application/json"></label><p id="batch-file-info" class="muted">尚未输入问题</p><button id="batch-submit" class="button full" disabled>执行批量查询</button><div id="batch-results" class="batch-results" aria-live="polite"></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-examples" class="page hidden">
+      <div class="page-heading"><div><p class="eyebrow">QUERY KNOWLEDGE</p><h1>查询示例知识库</h1><p class="subtitle">维护可复用的问题与 Cypher，修改后需要重新验证。</p></div><button id="new-example" class="button primary">＋ 新建示例</button></div>
+      <section class="panel"><div class="example-filters"><label class="search-field"><span class="sr-only">检索示例</span><input id="example-search" type="search" placeholder="搜索问题、实体或 Cypher…"></label><label><span class="sr-only">查询类型</span><select id="example-category"><option value="">全部类型</option><option value="entity">单节点查询</option><option value="filter">属性过滤</option><option value="api">入口 API</option><option value="downstream">下游服务</option><option value="impact">反向影响</option><option value="mq">MQ 链路</option><option value="combined">综合依赖</option></select></label><label><span class="sr-only">检索方式</span><select id="example-search-mode"><option value="hybrid">混合检索</option><option value="semantic">语义检索</option><option value="lexical">关键词检索</option></select></label><button id="search-examples" class="button">检索</button><button id="verify-examples" class="button">验证全部示例</button></div><div id="examples-summary" class="muted"></div><div id="examples-list" class="examples-list"></div></section>
+    </section>
+
+    <section id="page-guide" class="page hidden">
+      <div class="page-heading"><div><p class="eyebrow">RUN CONTEXT</p><h1>运行说明</h1><p class="subtitle">检查当前数据来源、模型模式与查询限制。</p></div></div>
+      <div class="guide-grid"><section class="panel"><h2>当前配置</h2><dl id="health-details" class="details-list"></dl></section><section class="panel"><h2>如何使用</h2><ol class="guide-list"><li>先查看运行模式，确认查询使用的是样例图谱还是课程 Neo4j。</li><li>输入带有具体服务或方法名的问题；遇到同名实体时，选择候选项继续。</li><li>对照数据、Cypher 与关系路径核验答案。空结果、查询失败与结果截断会分别标记。</li><li>知识库里的“已验证”只代表在标记的图谱版本上执行并得到非空结果，仍需人工核对问题语义。</li><li>样例模式与规则生成用于开发联调，其通过率不能作为模型或课程独立评测结果。实际运行器和 Skill 版本见当前配置。</li></ol></section><section class="panel schema-panel"><div class="section-title"><h2>图谱 Schema</h2><span id="schema-version" class="muted"></span></div><div id="schema-details"></div></section></div>
+    </section>
+  </main>
+
+  <dialog id="example-dialog" aria-labelledby="example-dialog-title"><form id="example-form"><div class="section-title"><h2 id="example-dialog-title">新建示例</h2><button type="button" id="close-example-dialog" class="icon-button" aria-label="关闭示例编辑">×</button></div><label>示例 ID<input id="edit-id" required pattern="[A-Za-z0-9_-]+" maxlength="64" placeholder="如 kb-food-downstream"></label><label>自然语言问题<textarea id="edit-question" rows="2" required maxlength="2000"></textarea></label><div class="form-row"><label>查询类型<select id="edit-category"><option value="entity">单节点查询</option><option value="filter">属性过滤</option><option value="api">入口 API</option><option value="downstream">下游服务</option><option value="impact">反向影响</option><option value="mq">MQ 链路</option><option value="combined">综合依赖</option></select></label><label>复杂度<select id="edit-complexity"><option value="simple">简单</option><option value="medium">中等</option><option value="hard">困难</option></select></label></div><label>Cypher<textarea id="edit-cypher" class="code-input" rows="5" required maxlength="20000"></textarea></label><label>参数（JSON 对象）<textarea id="edit-parameters" class="code-input" rows="3" required>{}</textarea></label><label>说明<textarea id="edit-description" rows="2" maxlength="4000"></textarea></label><div id="editor-error" class="message error hidden" role="alert"></div><p class="muted">保存后验证状态将重置。请重新执行验证并人工核对语义。</p><div class="dialog-actions"><button type="button" id="cancel-example" class="button">取消</button><button id="save-example" class="button primary" type="submit">保存示例</button></div></form></dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

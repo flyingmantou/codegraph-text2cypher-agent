@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-11-25T13:42:36.967Z",
+  "node": "v24.22.3",
+  "platform": "darwin",
+  "arch": "arm64",
+  "localSocket": {
+    "passed": false,
+    "code": "EPERM"
+  },
+  "dshHost": "not-installed-or-verified",
+  "neo4j": "course-connection-not-provided",
+  "browser": "not-verified",
+  "docker": "not-verified"
+}

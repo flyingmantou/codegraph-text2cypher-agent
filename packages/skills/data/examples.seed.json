@@ -1,0 +1,558 @@
+[
+  {
+    "id": "demo-entity-01",
+    "question": "查询 getAllFood 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "getAllFood",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-entity-02",
+    "question": "查询 placeOrder 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "placeOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-entity-03",
+    "question": "查询 payOrder 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "payOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-entity-04",
+    "question": "查询 queryTicket 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "queryTicket",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-entity-05",
+    "question": "查询 queryTravel 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "queryTravel",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-entity-06",
+    "question": "查询 ts-order-service 的实体信息",
+    "category": "entity",
+    "complexity": "simple",
+    "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+    "parameters": {
+      "name": "ts-order-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "按名称或标识定位单个节点；同名结果需人工确认，不以名称唯一为前提。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-filter-01",
+    "question": "筛选名称包含 food 的服务",
+    "category": "filter",
+    "complexity": "simple",
+    "cypher": "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit",
+    "parameters": {
+      "keyword": "food",
+      "limit": 100
+    },
+    "description": "按服务名称包含关键词筛选，不等同于全图任意属性查询。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-filter-02",
+    "question": "筛选名称包含 order 的服务",
+    "category": "filter",
+    "complexity": "simple",
+    "cypher": "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit",
+    "parameters": {
+      "keyword": "order",
+      "limit": 100
+    },
+    "description": "按服务名称包含关键词筛选，不等同于全图任意属性查询。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-filter-03",
+    "question": "筛选名称包含 payment 的服务",
+    "category": "filter",
+    "complexity": "simple",
+    "cypher": "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit",
+    "parameters": {
+      "keyword": "payment",
+      "limit": 100
+    },
+    "description": "按服务名称包含关键词筛选，不等同于全图任意属性查询。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-filter-04",
+    "question": "筛选名称包含 service 的服务",
+    "category": "filter",
+    "complexity": "simple",
+    "cypher": "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit",
+    "parameters": {
+      "keyword": "service",
+      "limit": 100
+    },
+    "description": "按服务名称包含关键词筛选，不等同于全图任意属性查询。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-api-01",
+    "question": "ts-food-service 有哪些入口 API？",
+    "category": "api",
+    "complexity": "simple",
+    "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "ts-food-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "返回目标服务的入口接口、入口方法和归属服务路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-api-02",
+    "question": "ts-order-service 有哪些入口 API？",
+    "category": "api",
+    "complexity": "simple",
+    "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "ts-order-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "返回目标服务的入口接口、入口方法和归属服务路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-api-03",
+    "question": "ts-payment-service 有哪些入口 API？",
+    "category": "api",
+    "complexity": "simple",
+    "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "ts-payment-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "返回目标服务的入口接口、入口方法和归属服务路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-api-04",
+    "question": "ts-ticket-service 有哪些入口 API？",
+    "category": "api",
+    "complexity": "simple",
+    "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "ts-ticket-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "返回目标服务的入口接口、入口方法和归属服务路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-api-05",
+    "question": "ts-travel-service 有哪些入口 API？",
+    "category": "api",
+    "complexity": "simple",
+    "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "ts-travel-service",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "返回目标服务的入口接口、入口方法和归属服务路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-01",
+    "question": "getAllFood 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "getAllFood",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-02",
+    "question": "placeOrder 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "placeOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-03",
+    "question": "payOrder 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "payOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-04",
+    "question": "queryTicket 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryTicket",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-05",
+    "question": "queryTravel 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryTravel",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-downstream-06",
+    "question": "sendNotification 方法依赖哪些下游服务？",
+    "category": "downstream",
+    "complexity": "medium",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "sendNotification",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿方法调用/RPC调用向被调用方追踪，最多四跳，再关联目标方法所属服务。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-01",
+    "question": "修改 queryFood 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryFood",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-02",
+    "question": "修改 queryFoodStore 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryFoodStore",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-03",
+    "question": "修改 queryOrder 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-04",
+    "question": "修改 checkTicket 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "checkTicket",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-05",
+    "question": "修改 charge 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "charge",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-impact-06",
+    "question": "修改 queryRoute 方法会影响哪些上游调用者？",
+    "category": "impact",
+    "complexity": "medium",
+    "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "queryRoute",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "沿调用者方向查找可到达目标方法的路径；不得把被调用方误当受影响方。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-mq-01",
+    "question": "getAllFood 方法发布的 MQ 消息经过哪些队列并由哪些服务消费？",
+    "category": "mq",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "getAllFood",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "检查发布方法→交换机→队列→消费者方法→消费者服务的完整路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-mq-02",
+    "question": "placeOrder 方法发布的 MQ 消息经过哪些队列并由哪些服务消费？",
+    "category": "mq",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "placeOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "检查发布方法→交换机→队列→消费者方法→消费者服务的完整路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-mq-03",
+    "question": "payOrder 方法发布的 MQ 消息经过哪些队列并由哪些服务消费？",
+    "category": "mq",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "payOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "检查发布方法→交换机→队列→消费者方法→消费者服务的完整路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-mq-04",
+    "question": "sendNotification 方法发布的 MQ 消息经过哪些队列并由哪些服务消费？",
+    "category": "mq",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "sendNotification",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "检查发布方法→交换机→队列→消费者方法→消费者服务的完整路径。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-combined-01",
+    "question": "getAllFood 方法的 RPC 和 MQ 综合依赖是什么？",
+    "category": "combined",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`|`发布`|`路由`|`消费`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "getAllFood",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "参考查询覆盖受限同步/异步关系；v2实际联合流程拆为downstream和mq后按实体ID合并。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-combined-02",
+    "question": "placeOrder 方法的 RPC 和 MQ 综合依赖是什么？",
+    "category": "combined",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`|`发布`|`路由`|`消费`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "placeOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "参考查询覆盖受限同步/异步关系；v2实际联合流程拆为downstream和mq后按实体ID合并。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-combined-03",
+    "question": "payOrder 方法的 RPC 和 MQ 综合依赖是什么？",
+    "category": "combined",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`|`发布`|`路由`|`消费`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "payOrder",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "参考查询覆盖受限同步/异步关系；v2实际联合流程拆为downstream和mq后按实体ID合并。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  },
+  {
+    "id": "demo-combined-04",
+    "question": "sendNotification 方法的 RPC 和 MQ 综合依赖是什么？",
+    "category": "combined",
+    "complexity": "hard",
+    "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`|`发布`|`路由`|`消费`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+    "parameters": {
+      "name": "sendNotification",
+      "entityId": "",
+      "limit": 100
+    },
+    "description": "参考查询覆盖受限同步/异步关系；v2实际联合流程拆为downstream和mq后按实体ID合并。 人工fixture示例，迁移真实课程图谱须复核标签、方向、实体与结果集合。",
+    "verification": {
+      "status": "unverified"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-11-25",
+  "upstreamRepository": "https://github.com/deepseek-ai/deepseek-harness",
+  "sourceManifestVersion": "0.2.3-alpha.2",
+  "sourceNodeRange": "^24.22.3 || >=26.13.1",
+  "runtimeLoaded": false,
+  "npmPublicationVerified": false,
+  "sourceCommit": null,
+  "contract": {
+    "entrypoint": "async apply(ctx, config)",
+    "inject": ["tools", "skills"],
+    "registration": "ctx.tools.register(raw ToolDefinition)",
+    "skillRegistration": "ctx.skills.register({name,description,source,content,invocation})",
+    "guard": "ctx.tools.guard(exec => denial | undefined)",
+    "deadline": "ctx.on('tools/execute', (exec, next) => ...)"
+  },
+  "note": "Observed source contract; not a package lock or proof of host loading. Record actual host commit and validate the source overlay before deployment."
+}

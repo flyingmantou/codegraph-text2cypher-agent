@@ -1,0 +1,9 @@
+# Keep the entire merged project available: this entry imports the tools and skills packages.
+# Use the absolute path of the merged project on the receiving computer.
+- insert:
+    - id: codegraph-project-runtime
+      name: '/absolute/path/to/codegraph-text2cypher-v2/packages/harness/dsh/index.ts'
+      config:
+        graphMode: 'fixture'
+        timeoutMs: 60000
+        maxToolCalls: 24

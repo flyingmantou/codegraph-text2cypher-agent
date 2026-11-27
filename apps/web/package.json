@@ -1,0 +1,9 @@
+{
+  "name": "@codegraph/web",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "CodeGraph browser interaction and evidence visualization",
+  "scripts": { "test": "node --test tests/*.test.js" },
+  "engines": { "node": ">=24.22.3" }
+}

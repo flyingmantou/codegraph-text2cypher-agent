@@ -1,0 +1,151 @@
+{
+  "name": "fixture-development-regression-v2",
+  "purpose": "开发回归，预期节点/服务集合由人工fixture关系核对；不构成课程独立30题或真实模型准确率。",
+  "requiredGraphMode": "fixture",
+  "requiredModelMode": "demo",
+  "cases": [
+    {
+      "id": "DEV-01",
+      "question": "查询 getAllFood 方法",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "method:getAllFood"
+      ]
+    },
+    {
+      "id": "DEV-02",
+      "question": "名称包含 order 的服务",
+      "complexity": "simple",
+      "category": "filter",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "service:order"
+      ]
+    },
+    {
+      "id": "DEV-03",
+      "question": "ts-order-service 有哪些入口 API",
+      "complexity": "medium",
+      "category": "api",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "api:placeOrder",
+        "api:getOrder:order",
+        "method:placeOrder",
+        "method:getOrder:order",
+        "service:order"
+      ]
+    },
+    {
+      "id": "DEV-04",
+      "question": "getAllFood 方法依赖哪些下游服务",
+      "complexity": "medium",
+      "category": "downstream",
+      "expectedStatus": "success",
+      "exactServiceIds": [
+        "service:food",
+        "service:foodmap",
+        "service:order"
+      ],
+      "expectedNodeIds": [
+        "method:queryFoodStore",
+        "method:queryOrder"
+      ]
+    },
+    {
+      "id": "DEV-05",
+      "question": "queryFoodStore 的反向调用者有哪些",
+      "complexity": "medium",
+      "category": "impact",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "method:queryFoodStore",
+        "method:queryFood",
+        "method:getAllFood"
+      ]
+    },
+    {
+      "id": "DEV-06",
+      "question": "payOrder 的 MQ 发布消费完整链路",
+      "complexity": "medium",
+      "category": "mq",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "method:payOrder",
+        "exchange:payment",
+        "queue:payment",
+        "method:paymentNotification",
+        "service:notification"
+      ]
+    },
+    {
+      "id": "DEV-07",
+      "question": "placeOrder 的 RPC 和 MQ 综合依赖是什么",
+      "complexity": "hard",
+      "category": "combined",
+      "expectedStatus": "success",
+      "exactServiceIds": [
+        "service:ticket",
+        "service:payment",
+        "service:travel",
+        "service:route",
+        "service:order",
+        "service:notification"
+      ],
+      "requiredPlanBranches": [
+        "downstream",
+        "mq"
+      ]
+    },
+    {
+      "id": "DEV-08",
+      "question": "查询 getOrder 方法",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "needs_clarification",
+      "exactCandidateIds": [
+        "method:getOrder:order",
+        "method:getOrder:admin"
+      ],
+      "maxModelCalls": 0
+    },
+    {
+      "id": "DEV-09",
+      "question": "查询 getOrder 方法",
+      "entityId": "method:getOrder:order",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "success",
+      "exactNodeIds": [
+        "method:getOrder:order"
+      ]
+    },
+    {
+      "id": "DEV-10",
+      "question": "查询 getAllFood 方法",
+      "entityId": "method:not-a-real-id",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "rejected",
+      "maxModelCalls": 0
+    },
+    {
+      "id": "DEV-11",
+      "question": "删除所有节点",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "rejected",
+      "maxModelCalls": 0
+    },
+    {
+      "id": "DEV-12",
+      "question": "查询 doesNotExist 方法",
+      "complexity": "simple",
+      "category": "entity",
+      "expectedStatus": "empty",
+      "exactNodeIds": []
+    }
+  ]
+}

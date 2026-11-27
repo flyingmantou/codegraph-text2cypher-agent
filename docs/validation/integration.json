@@ -1,0 +1,2555 @@
+{
+  "transport": "in-process-http-handler",
+  "createdAt": "2026-11-25T13:42:05.313Z",
+  "checks": {
+    "examples": true,
+    "development": true,
+    "/": true,
+    "/styles.css": true,
+    "/app.js": true,
+    "/api-client.js": true,
+    "/helpers.js": true,
+    "/api/health": true,
+    "/api/schema": true,
+    "batch": true,
+    "markdown": true
+  },
+  "exampleVerification": {
+    "total": 35,
+    "verified": 35,
+    "failed": 0,
+    "graphVersion": "fixture-train-ticket-v1",
+    "source": "fixture",
+    "results": [
+      {
+        "id": "demo-entity-01",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-entity-02",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-entity-03",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-entity-04",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-entity-05",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-entity-06",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-filter-01",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-filter-02",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-filter-03",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-filter-04",
+        "status": "verified",
+        "rowCount": 9
+      },
+      {
+        "id": "demo-api-01",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-api-02",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-api-03",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-api-04",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-api-05",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-downstream-01",
+        "status": "verified",
+        "rowCount": 3
+      },
+      {
+        "id": "demo-downstream-02",
+        "status": "verified",
+        "rowCount": 6
+      },
+      {
+        "id": "demo-downstream-03",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-downstream-04",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-downstream-05",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-downstream-06",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-impact-01",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-impact-02",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-impact-03",
+        "status": "verified",
+        "rowCount": 4
+      },
+      {
+        "id": "demo-impact-04",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-impact-05",
+        "status": "verified",
+        "rowCount": 2
+      },
+      {
+        "id": "demo-impact-06",
+        "status": "verified",
+        "rowCount": 5
+      },
+      {
+        "id": "demo-mq-01",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-mq-02",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-mq-03",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-mq-04",
+        "status": "verified",
+        "rowCount": 1
+      },
+      {
+        "id": "demo-combined-01",
+        "status": "verified",
+        "rowCount": 4
+      },
+      {
+        "id": "demo-combined-02",
+        "status": "verified",
+        "rowCount": 9
+      },
+      {
+        "id": "demo-combined-03",
+        "status": "verified",
+        "rowCount": 3
+      },
+      {
+        "id": "demo-combined-04",
+        "status": "verified",
+        "rowCount": 2
+      }
+    ]
+  },
+  "evaluation": {
+    "suite": "fixture-development-regression-v2",
+    "purpose": "开发回归，预期节点/服务集合由人工fixture关系核对；不构成课程独立30题或真实模型准确率。",
+    "createdAt": "2026-11-25T13:42:05.293Z",
+    "cases": [
+      {
+        "id": "DEV-01",
+        "question": "查询 getAllFood 方法",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 8,
+        "status": "success",
+        "cypher": [
+          "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:getAllFood",
+              "limit": 100
+            },
+            "label": "定位实体节点"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "n"
+          ],
+          "rows": [
+            {
+              "n": {
+                "id": "method:getAllFood",
+                "label": "方法",
+                "name": "getAllFood",
+                "properties": {
+                  "标识": "method:getAllFood",
+                  "名称": "getAllFood",
+                  "所属服务": "ts-food-service"
+                }
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:getAllFood",
+                "label": "方法",
+                "name": "getAllFood",
+                "properties": {
+                  "标识": "method:getAllFood",
+                  "名称": "getAllFood",
+                  "所属服务": "ts-food-service"
+                }
+              }
+            ],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0.01
+        },
+        "actualNodeIds": [
+          "method:getAllFood"
+        ],
+        "actualServiceIds": [],
+        "summary": "查询返回 1 条记录、1 个节点和 0 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-02",
+        "question": "名称包含 order 的服务",
+        "category": "filter",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH (n:`服务`) WHERE n.`名称` CONTAINS $keyword RETURN n LIMIT $limit",
+            "parameters": {
+              "keyword": "order",
+              "limit": 100
+            },
+            "label": "按名称关键词筛选服务"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "n"
+          ],
+          "rows": [
+            {
+              "n": {
+                "id": "service:order",
+                "label": "服务",
+                "name": "ts-order-service",
+                "properties": {
+                  "标识": "service:order",
+                  "名称": "ts-order-service",
+                  "描述": "人工演示服务"
+                }
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "service:order",
+                "label": "服务",
+                "name": "ts-order-service",
+                "properties": {
+                  "标识": "service:order",
+                  "名称": "ts-order-service",
+                  "描述": "人工演示服务"
+                }
+              }
+            ],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0.01
+        },
+        "actualNodeIds": [
+          "service:order"
+        ],
+        "actualServiceIds": [
+          "service:order"
+        ],
+        "summary": "查询返回 1 条记录、1 个节点和 0 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 5,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-03",
+        "question": "ts-order-service 有哪些入口 API",
+        "category": "api",
+        "complexity": "medium",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH p=(a:`接口`)-[:`入口`]->(m:`方法`)-[:`属于`]->(s:`服务`) WHERE s.`名称` = $name OR s.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "service:order",
+              "limit": 100
+            },
+            "label": "查询目标服务的入口接口路径"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "p"
+          ],
+          "rows": [
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "api:placeOrder",
+                    "label": "接口",
+                    "name": "/api/placeOrder",
+                    "properties": {
+                      "标识": "api:placeOrder",
+                      "名称": "/api/placeOrder",
+                      "HTTP方法": "POST"
+                    }
+                  },
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "service:order",
+                    "label": "服务",
+                    "name": "ts-order-service",
+                    "properties": {
+                      "标识": "service:order",
+                      "名称": "ts-order-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e020",
+                    "source": "api:placeOrder",
+                    "target": "method:placeOrder",
+                    "type": "入口",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e004",
+                    "source": "method:placeOrder",
+                    "target": "service:order",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "api:getOrder:order",
+                    "label": "接口",
+                    "name": "/api/getOrder/order",
+                    "properties": {
+                      "标识": "api:getOrder:order",
+                      "名称": "/api/getOrder/order",
+                      "HTTP方法": "GET"
+                    }
+                  },
+                  {
+                    "id": "method:getOrder:order",
+                    "label": "方法",
+                    "name": "getOrder",
+                    "properties": {
+                      "标识": "method:getOrder:order",
+                      "名称": "getOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "service:order",
+                    "label": "服务",
+                    "name": "ts-order-service",
+                    "properties": {
+                      "标识": "service:order",
+                      "名称": "ts-order-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e024",
+                    "source": "api:getOrder:order",
+                    "target": "method:getOrder:order",
+                    "type": "入口",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e017",
+                    "source": "method:getOrder:order",
+                    "target": "service:order",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "api:placeOrder",
+                "label": "接口",
+                "name": "/api/placeOrder",
+                "properties": {
+                  "标识": "api:placeOrder",
+                  "名称": "/api/placeOrder",
+                  "HTTP方法": "POST"
+                }
+              },
+              {
+                "id": "method:placeOrder",
+                "label": "方法",
+                "name": "placeOrder",
+                "properties": {
+                  "标识": "method:placeOrder",
+                  "名称": "placeOrder",
+                  "所属服务": "ts-order-service"
+                }
+              },
+              {
+                "id": "service:order",
+                "label": "服务",
+                "name": "ts-order-service",
+                "properties": {
+                  "标识": "service:order",
+                  "名称": "ts-order-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "api:getOrder:order",
+                "label": "接口",
+                "name": "/api/getOrder/order",
+                "properties": {
+                  "标识": "api:getOrder:order",
+                  "名称": "/api/getOrder/order",
+                  "HTTP方法": "GET"
+                }
+              },
+              {
+                "id": "method:getOrder:order",
+                "label": "方法",
+                "name": "getOrder",
+                "properties": {
+                  "标识": "method:getOrder:order",
+                  "名称": "getOrder",
+                  "所属服务": "ts-order-service"
+                }
+              }
+            ],
+            "edges": [
+              {
+                "id": "e020",
+                "source": "api:placeOrder",
+                "target": "method:placeOrder",
+                "type": "入口",
+                "properties": {}
+              },
+              {
+                "id": "e004",
+                "source": "method:placeOrder",
+                "target": "service:order",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e024",
+                "source": "api:getOrder:order",
+                "target": "method:getOrder:order",
+                "type": "入口",
+                "properties": {}
+              },
+              {
+                "id": "e017",
+                "source": "method:getOrder:order",
+                "target": "service:order",
+                "type": "属于",
+                "properties": {}
+              }
+            ]
+          },
+          "truncated": false,
+          "durationMs": 0.02
+        },
+        "actualNodeIds": [
+          "api:getOrder:order",
+          "api:placeOrder",
+          "method:getOrder:order",
+          "method:placeOrder",
+          "service:order"
+        ],
+        "actualServiceIds": [
+          "service:order"
+        ],
+        "summary": "查询返回 2 条记录、5 个节点和 4 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-04",
+        "question": "getAllFood 方法依赖哪些下游服务",
+        "category": "downstream",
+        "complexity": "medium",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:getAllFood",
+              "limit": 100
+            },
+            "label": "沿调用方向查询下游方法与服务"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "p"
+          ],
+          "rows": [
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:getAllFood",
+                    "label": "方法",
+                    "name": "getAllFood",
+                    "properties": {
+                      "标识": "method:getAllFood",
+                      "名称": "getAllFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFood",
+                    "label": "方法",
+                    "name": "queryFood",
+                    "properties": {
+                      "标识": "method:queryFood",
+                      "名称": "queryFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "service:food",
+                    "label": "服务",
+                    "name": "ts-food-service",
+                    "properties": {
+                      "标识": "service:food",
+                      "名称": "ts-food-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e026",
+                    "source": "method:getAllFood",
+                    "target": "method:queryFood",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e002",
+                    "source": "method:queryFood",
+                    "target": "service:food",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:getAllFood",
+                    "label": "方法",
+                    "name": "getAllFood",
+                    "properties": {
+                      "标识": "method:getAllFood",
+                      "名称": "getAllFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFood",
+                    "label": "方法",
+                    "name": "queryFood",
+                    "properties": {
+                      "标识": "method:queryFood",
+                      "名称": "queryFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFoodStore",
+                    "label": "方法",
+                    "name": "queryFoodStore",
+                    "properties": {
+                      "标识": "method:queryFoodStore",
+                      "名称": "queryFoodStore",
+                      "所属服务": "ts-foodmap-service"
+                    }
+                  },
+                  {
+                    "id": "service:foodmap",
+                    "label": "服务",
+                    "name": "ts-foodmap-service",
+                    "properties": {
+                      "标识": "service:foodmap",
+                      "名称": "ts-foodmap-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e026",
+                    "source": "method:getAllFood",
+                    "target": "method:queryFood",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e027",
+                    "source": "method:queryFood",
+                    "target": "method:queryFoodStore",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e003",
+                    "source": "method:queryFoodStore",
+                    "target": "service:foodmap",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:getAllFood",
+                    "label": "方法",
+                    "name": "getAllFood",
+                    "properties": {
+                      "标识": "method:getAllFood",
+                      "名称": "getAllFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFood",
+                    "label": "方法",
+                    "name": "queryFood",
+                    "properties": {
+                      "标识": "method:queryFood",
+                      "名称": "queryFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFoodStore",
+                    "label": "方法",
+                    "name": "queryFoodStore",
+                    "properties": {
+                      "标识": "method:queryFoodStore",
+                      "名称": "queryFoodStore",
+                      "所属服务": "ts-foodmap-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryOrder",
+                    "label": "方法",
+                    "name": "queryOrder",
+                    "properties": {
+                      "标识": "method:queryOrder",
+                      "名称": "queryOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "service:order",
+                    "label": "服务",
+                    "name": "ts-order-service",
+                    "properties": {
+                      "标识": "service:order",
+                      "名称": "ts-order-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e026",
+                    "source": "method:getAllFood",
+                    "target": "method:queryFood",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e027",
+                    "source": "method:queryFood",
+                    "target": "method:queryFoodStore",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e028",
+                    "source": "method:queryFoodStore",
+                    "target": "method:queryOrder",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e005",
+                    "source": "method:queryOrder",
+                    "target": "service:order",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:getAllFood",
+                "label": "方法",
+                "name": "getAllFood",
+                "properties": {
+                  "标识": "method:getAllFood",
+                  "名称": "getAllFood",
+                  "所属服务": "ts-food-service"
+                }
+              },
+              {
+                "id": "method:queryFood",
+                "label": "方法",
+                "name": "queryFood",
+                "properties": {
+                  "标识": "method:queryFood",
+                  "名称": "queryFood",
+                  "所属服务": "ts-food-service"
+                }
+              },
+              {
+                "id": "service:food",
+                "label": "服务",
+                "name": "ts-food-service",
+                "properties": {
+                  "标识": "service:food",
+                  "名称": "ts-food-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:queryFoodStore",
+                "label": "方法",
+                "name": "queryFoodStore",
+                "properties": {
+                  "标识": "method:queryFoodStore",
+                  "名称": "queryFoodStore",
+                  "所属服务": "ts-foodmap-service"
+                }
+              },
+              {
+                "id": "service:foodmap",
+                "label": "服务",
+                "name": "ts-foodmap-service",
+                "properties": {
+                  "标识": "service:foodmap",
+                  "名称": "ts-foodmap-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:queryOrder",
+                "label": "方法",
+                "name": "queryOrder",
+                "properties": {
+                  "标识": "method:queryOrder",
+                  "名称": "queryOrder",
+                  "所属服务": "ts-order-service"
+                }
+              },
+              {
+                "id": "service:order",
+                "label": "服务",
+                "name": "ts-order-service",
+                "properties": {
+                  "标识": "service:order",
+                  "名称": "ts-order-service",
+                  "描述": "人工演示服务"
+                }
+              }
+            ],
+            "edges": [
+              {
+                "id": "e026",
+                "source": "method:getAllFood",
+                "target": "method:queryFood",
+                "type": "调用",
+                "properties": {}
+              },
+              {
+                "id": "e002",
+                "source": "method:queryFood",
+                "target": "service:food",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e027",
+                "source": "method:queryFood",
+                "target": "method:queryFoodStore",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e003",
+                "source": "method:queryFoodStore",
+                "target": "service:foodmap",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e028",
+                "source": "method:queryFoodStore",
+                "target": "method:queryOrder",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e005",
+                "source": "method:queryOrder",
+                "target": "service:order",
+                "type": "属于",
+                "properties": {}
+              }
+            ]
+          },
+          "truncated": false,
+          "durationMs": 0.05
+        },
+        "actualNodeIds": [
+          "method:getAllFood",
+          "method:queryFood",
+          "method:queryFoodStore",
+          "method:queryOrder",
+          "service:food",
+          "service:foodmap",
+          "service:order"
+        ],
+        "actualServiceIds": [
+          "service:food",
+          "service:foodmap",
+          "service:order"
+        ],
+        "summary": "查询返回 3 条记录、7 个节点和 6 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-05",
+        "question": "queryFoodStore 的反向调用者有哪些",
+        "category": "impact",
+        "complexity": "medium",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH p=(caller:`方法`)-[:`调用`|`RPC调用`*1..4]->(m:`方法`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:queryFoodStore",
+              "limit": 100
+            },
+            "label": "沿调用者方向追踪反向影响"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "p"
+          ],
+          "rows": [
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:queryFood",
+                    "label": "方法",
+                    "name": "queryFood",
+                    "properties": {
+                      "标识": "method:queryFood",
+                      "名称": "queryFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFoodStore",
+                    "label": "方法",
+                    "name": "queryFoodStore",
+                    "properties": {
+                      "标识": "method:queryFoodStore",
+                      "名称": "queryFoodStore",
+                      "所属服务": "ts-foodmap-service"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e027",
+                    "source": "method:queryFood",
+                    "target": "method:queryFoodStore",
+                    "type": "RPC调用",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:getAllFood",
+                    "label": "方法",
+                    "name": "getAllFood",
+                    "properties": {
+                      "标识": "method:getAllFood",
+                      "名称": "getAllFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFood",
+                    "label": "方法",
+                    "name": "queryFood",
+                    "properties": {
+                      "标识": "method:queryFood",
+                      "名称": "queryFood",
+                      "所属服务": "ts-food-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryFoodStore",
+                    "label": "方法",
+                    "name": "queryFoodStore",
+                    "properties": {
+                      "标识": "method:queryFoodStore",
+                      "名称": "queryFoodStore",
+                      "所属服务": "ts-foodmap-service"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e026",
+                    "source": "method:getAllFood",
+                    "target": "method:queryFood",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e027",
+                    "source": "method:queryFood",
+                    "target": "method:queryFoodStore",
+                    "type": "RPC调用",
+                    "properties": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:queryFood",
+                "label": "方法",
+                "name": "queryFood",
+                "properties": {
+                  "标识": "method:queryFood",
+                  "名称": "queryFood",
+                  "所属服务": "ts-food-service"
+                }
+              },
+              {
+                "id": "method:queryFoodStore",
+                "label": "方法",
+                "name": "queryFoodStore",
+                "properties": {
+                  "标识": "method:queryFoodStore",
+                  "名称": "queryFoodStore",
+                  "所属服务": "ts-foodmap-service"
+                }
+              },
+              {
+                "id": "method:getAllFood",
+                "label": "方法",
+                "name": "getAllFood",
+                "properties": {
+                  "标识": "method:getAllFood",
+                  "名称": "getAllFood",
+                  "所属服务": "ts-food-service"
+                }
+              }
+            ],
+            "edges": [
+              {
+                "id": "e027",
+                "source": "method:queryFood",
+                "target": "method:queryFoodStore",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e026",
+                "source": "method:getAllFood",
+                "target": "method:queryFood",
+                "type": "调用",
+                "properties": {}
+              }
+            ]
+          },
+          "truncated": false,
+          "durationMs": 0.02
+        },
+        "actualNodeIds": [
+          "method:getAllFood",
+          "method:queryFood",
+          "method:queryFoodStore"
+        ],
+        "actualServiceIds": [],
+        "summary": "查询返回 2 条记录、3 个节点和 2 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-06",
+        "question": "payOrder 的 MQ 发布消费完整链路",
+        "category": "mq",
+        "complexity": "medium",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:payOrder",
+              "limit": 100
+            },
+            "label": "查询发布到消费的完整消息链路"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "p"
+          ],
+          "rows": [
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:payOrder",
+                    "label": "方法",
+                    "name": "payOrder",
+                    "properties": {
+                      "标识": "method:payOrder",
+                      "名称": "payOrder",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "exchange:payment",
+                    "label": "交换机",
+                    "name": "payment.events",
+                    "properties": {
+                      "标识": "exchange:payment",
+                      "名称": "payment.events"
+                    }
+                  },
+                  {
+                    "id": "queue:payment",
+                    "label": "队列",
+                    "name": "payment.queue",
+                    "properties": {
+                      "标识": "queue:payment",
+                      "名称": "payment.queue"
+                    }
+                  },
+                  {
+                    "id": "method:paymentNotification",
+                    "label": "方法",
+                    "name": "paymentNotification",
+                    "properties": {
+                      "标识": "method:paymentNotification",
+                      "名称": "paymentNotification",
+                      "所属服务": "ts-notification-service"
+                    }
+                  },
+                  {
+                    "id": "service:notification",
+                    "label": "服务",
+                    "name": "ts-notification-service",
+                    "properties": {
+                      "标识": "service:notification",
+                      "名称": "ts-notification-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e045",
+                    "source": "method:payOrder",
+                    "target": "exchange:payment",
+                    "type": "发布",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e046",
+                    "source": "exchange:payment",
+                    "target": "queue:payment",
+                    "type": "路由",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e047",
+                    "source": "queue:payment",
+                    "target": "method:paymentNotification",
+                    "type": "消费",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e014",
+                    "source": "method:paymentNotification",
+                    "target": "service:notification",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:payOrder",
+                "label": "方法",
+                "name": "payOrder",
+                "properties": {
+                  "标识": "method:payOrder",
+                  "名称": "payOrder",
+                  "所属服务": "ts-payment-service"
+                }
+              },
+              {
+                "id": "exchange:payment",
+                "label": "交换机",
+                "name": "payment.events",
+                "properties": {
+                  "标识": "exchange:payment",
+                  "名称": "payment.events"
+                }
+              },
+              {
+                "id": "queue:payment",
+                "label": "队列",
+                "name": "payment.queue",
+                "properties": {
+                  "标识": "queue:payment",
+                  "名称": "payment.queue"
+                }
+              },
+              {
+                "id": "method:paymentNotification",
+                "label": "方法",
+                "name": "paymentNotification",
+                "properties": {
+                  "标识": "method:paymentNotification",
+                  "名称": "paymentNotification",
+                  "所属服务": "ts-notification-service"
+                }
+              },
+              {
+                "id": "service:notification",
+                "label": "服务",
+                "name": "ts-notification-service",
+                "properties": {
+                  "标识": "service:notification",
+                  "名称": "ts-notification-service",
+                  "描述": "人工演示服务"
+                }
+              }
+            ],
+            "edges": [
+              {
+                "id": "e045",
+                "source": "method:payOrder",
+                "target": "exchange:payment",
+                "type": "发布",
+                "properties": {}
+              },
+              {
+                "id": "e046",
+                "source": "exchange:payment",
+                "target": "queue:payment",
+                "type": "路由",
+                "properties": {}
+              },
+              {
+                "id": "e047",
+                "source": "queue:payment",
+                "target": "method:paymentNotification",
+                "type": "消费",
+                "properties": {}
+              },
+              {
+                "id": "e014",
+                "source": "method:paymentNotification",
+                "target": "service:notification",
+                "type": "属于",
+                "properties": {}
+              }
+            ]
+          },
+          "truncated": false,
+          "durationMs": 0.02
+        },
+        "actualNodeIds": [
+          "exchange:payment",
+          "method:payOrder",
+          "method:paymentNotification",
+          "queue:payment",
+          "service:notification"
+        ],
+        "actualServiceIds": [
+          "service:notification"
+        ],
+        "summary": "查询返回 1 条记录、5 个节点和 4 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-07",
+        "question": "placeOrder 的 RPC 和 MQ 综合依赖是什么",
+        "category": "combined",
+        "complexity": "hard",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 2,
+        "status": "success",
+        "cypher": [
+          "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+          "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH p=(m:`方法`)-[:`调用`|`RPC调用`*1..4]->(target:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:placeOrder",
+              "limit": 100
+            },
+            "label": "沿同步调用关系查询被调用方法及所属服务"
+          },
+          {
+            "cypher": "MATCH p=(m:`方法`)-[:`发布`]->(x:`交换机`)-[:`路由`]->(q:`队列`)-[:`消费`]->(consumer:`方法`)-[:`属于`]->(s:`服务`) WHERE m.`名称` = $name OR m.`标识` = $entityId RETURN p LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:placeOrder",
+              "limit": 100
+            },
+            "label": "查询源方法发布、路由、消费到目标服务的异步消息链路"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "p"
+          ],
+          "rows": [
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:checkTicket",
+                    "label": "方法",
+                    "name": "checkTicket",
+                    "properties": {
+                      "标识": "method:checkTicket",
+                      "名称": "checkTicket",
+                      "所属服务": "ts-ticket-service"
+                    }
+                  },
+                  {
+                    "id": "service:ticket",
+                    "label": "服务",
+                    "name": "ts-ticket-service",
+                    "properties": {
+                      "标识": "service:ticket",
+                      "名称": "ts-ticket-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e029",
+                    "source": "method:placeOrder",
+                    "target": "method:checkTicket",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e010",
+                    "source": "method:checkTicket",
+                    "target": "service:ticket",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:checkTicket",
+                    "label": "方法",
+                    "name": "checkTicket",
+                    "properties": {
+                      "标识": "method:checkTicket",
+                      "名称": "checkTicket",
+                      "所属服务": "ts-ticket-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryTravel",
+                    "label": "方法",
+                    "name": "queryTravel",
+                    "properties": {
+                      "标识": "method:queryTravel",
+                      "名称": "queryTravel",
+                      "所属服务": "ts-travel-service"
+                    }
+                  },
+                  {
+                    "id": "service:travel",
+                    "label": "服务",
+                    "name": "ts-travel-service",
+                    "properties": {
+                      "标识": "service:travel",
+                      "名称": "ts-travel-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e029",
+                    "source": "method:placeOrder",
+                    "target": "method:checkTicket",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e031",
+                    "source": "method:checkTicket",
+                    "target": "method:queryTravel",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e011",
+                    "source": "method:queryTravel",
+                    "target": "service:travel",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:checkTicket",
+                    "label": "方法",
+                    "name": "checkTicket",
+                    "properties": {
+                      "标识": "method:checkTicket",
+                      "名称": "checkTicket",
+                      "所属服务": "ts-ticket-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryTravel",
+                    "label": "方法",
+                    "name": "queryTravel",
+                    "properties": {
+                      "标识": "method:queryTravel",
+                      "名称": "queryTravel",
+                      "所属服务": "ts-travel-service"
+                    }
+                  },
+                  {
+                    "id": "method:queryRoute",
+                    "label": "方法",
+                    "name": "queryRoute",
+                    "properties": {
+                      "标识": "method:queryRoute",
+                      "名称": "queryRoute",
+                      "所属服务": "ts-route-service"
+                    }
+                  },
+                  {
+                    "id": "service:route",
+                    "label": "服务",
+                    "name": "ts-route-service",
+                    "properties": {
+                      "标识": "service:route",
+                      "名称": "ts-route-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e029",
+                    "source": "method:placeOrder",
+                    "target": "method:checkTicket",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e031",
+                    "source": "method:checkTicket",
+                    "target": "method:queryTravel",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e035",
+                    "source": "method:queryTravel",
+                    "target": "method:queryRoute",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e012",
+                    "source": "method:queryRoute",
+                    "target": "service:route",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:payOrder",
+                    "label": "方法",
+                    "name": "payOrder",
+                    "properties": {
+                      "标识": "method:payOrder",
+                      "名称": "payOrder",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "service:payment",
+                    "label": "服务",
+                    "name": "ts-payment-service",
+                    "properties": {
+                      "标识": "service:payment",
+                      "名称": "ts-payment-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e030",
+                    "source": "method:placeOrder",
+                    "target": "method:payOrder",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e007",
+                    "source": "method:payOrder",
+                    "target": "service:payment",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:payOrder",
+                    "label": "方法",
+                    "name": "payOrder",
+                    "properties": {
+                      "标识": "method:payOrder",
+                      "名称": "payOrder",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "method:charge",
+                    "label": "方法",
+                    "name": "charge",
+                    "properties": {
+                      "标识": "method:charge",
+                      "名称": "charge",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "service:payment",
+                    "label": "服务",
+                    "name": "ts-payment-service",
+                    "properties": {
+                      "标识": "service:payment",
+                      "名称": "ts-payment-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e030",
+                    "source": "method:placeOrder",
+                    "target": "method:payOrder",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e032",
+                    "source": "method:payOrder",
+                    "target": "method:charge",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e008",
+                    "source": "method:charge",
+                    "target": "service:payment",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "method:payOrder",
+                    "label": "方法",
+                    "name": "payOrder",
+                    "properties": {
+                      "标识": "method:payOrder",
+                      "名称": "payOrder",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "method:charge",
+                    "label": "方法",
+                    "name": "charge",
+                    "properties": {
+                      "标识": "method:charge",
+                      "名称": "charge",
+                      "所属服务": "ts-payment-service"
+                    }
+                  },
+                  {
+                    "id": "method:updateOrder",
+                    "label": "方法",
+                    "name": "updateOrder",
+                    "properties": {
+                      "标识": "method:updateOrder",
+                      "名称": "updateOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "service:order",
+                    "label": "服务",
+                    "name": "ts-order-service",
+                    "properties": {
+                      "标识": "service:order",
+                      "名称": "ts-order-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e030",
+                    "source": "method:placeOrder",
+                    "target": "method:payOrder",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e032",
+                    "source": "method:payOrder",
+                    "target": "method:charge",
+                    "type": "调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e033",
+                    "source": "method:charge",
+                    "target": "method:updateOrder",
+                    "type": "RPC调用",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e006",
+                    "source": "method:updateOrder",
+                    "target": "service:order",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            },
+            {
+              "p": {
+                "nodes": [
+                  {
+                    "id": "method:placeOrder",
+                    "label": "方法",
+                    "name": "placeOrder",
+                    "properties": {
+                      "标识": "method:placeOrder",
+                      "名称": "placeOrder",
+                      "所属服务": "ts-order-service"
+                    }
+                  },
+                  {
+                    "id": "exchange:order",
+                    "label": "交换机",
+                    "name": "order.events",
+                    "properties": {
+                      "标识": "exchange:order",
+                      "名称": "order.events"
+                    }
+                  },
+                  {
+                    "id": "queue:order",
+                    "label": "队列",
+                    "name": "order.queue",
+                    "properties": {
+                      "标识": "queue:order",
+                      "名称": "order.queue"
+                    }
+                  },
+                  {
+                    "id": "method:sendNotification",
+                    "label": "方法",
+                    "name": "sendNotification",
+                    "properties": {
+                      "标识": "method:sendNotification",
+                      "名称": "sendNotification",
+                      "所属服务": "ts-notification-service"
+                    }
+                  },
+                  {
+                    "id": "service:notification",
+                    "label": "服务",
+                    "name": "ts-notification-service",
+                    "properties": {
+                      "标识": "service:notification",
+                      "名称": "ts-notification-service",
+                      "描述": "人工演示服务"
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e042",
+                    "source": "method:placeOrder",
+                    "target": "exchange:order",
+                    "type": "发布",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e043",
+                    "source": "exchange:order",
+                    "target": "queue:order",
+                    "type": "路由",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e044",
+                    "source": "queue:order",
+                    "target": "method:sendNotification",
+                    "type": "消费",
+                    "properties": {}
+                  },
+                  {
+                    "id": "e013",
+                    "source": "method:sendNotification",
+                    "target": "service:notification",
+                    "type": "属于",
+                    "properties": {}
+                  }
+                ]
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:placeOrder",
+                "label": "方法",
+                "name": "placeOrder",
+                "properties": {
+                  "标识": "method:placeOrder",
+                  "名称": "placeOrder",
+                  "所属服务": "ts-order-service"
+                }
+              },
+              {
+                "id": "method:checkTicket",
+                "label": "方法",
+                "name": "checkTicket",
+                "properties": {
+                  "标识": "method:checkTicket",
+                  "名称": "checkTicket",
+                  "所属服务": "ts-ticket-service"
+                }
+              },
+              {
+                "id": "service:ticket",
+                "label": "服务",
+                "name": "ts-ticket-service",
+                "properties": {
+                  "标识": "service:ticket",
+                  "名称": "ts-ticket-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:queryTravel",
+                "label": "方法",
+                "name": "queryTravel",
+                "properties": {
+                  "标识": "method:queryTravel",
+                  "名称": "queryTravel",
+                  "所属服务": "ts-travel-service"
+                }
+              },
+              {
+                "id": "service:travel",
+                "label": "服务",
+                "name": "ts-travel-service",
+                "properties": {
+                  "标识": "service:travel",
+                  "名称": "ts-travel-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:queryRoute",
+                "label": "方法",
+                "name": "queryRoute",
+                "properties": {
+                  "标识": "method:queryRoute",
+                  "名称": "queryRoute",
+                  "所属服务": "ts-route-service"
+                }
+              },
+              {
+                "id": "service:route",
+                "label": "服务",
+                "name": "ts-route-service",
+                "properties": {
+                  "标识": "service:route",
+                  "名称": "ts-route-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:payOrder",
+                "label": "方法",
+                "name": "payOrder",
+                "properties": {
+                  "标识": "method:payOrder",
+                  "名称": "payOrder",
+                  "所属服务": "ts-payment-service"
+                }
+              },
+              {
+                "id": "service:payment",
+                "label": "服务",
+                "name": "ts-payment-service",
+                "properties": {
+                  "标识": "service:payment",
+                  "名称": "ts-payment-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "method:charge",
+                "label": "方法",
+                "name": "charge",
+                "properties": {
+                  "标识": "method:charge",
+                  "名称": "charge",
+                  "所属服务": "ts-payment-service"
+                }
+              },
+              {
+                "id": "method:updateOrder",
+                "label": "方法",
+                "name": "updateOrder",
+                "properties": {
+                  "标识": "method:updateOrder",
+                  "名称": "updateOrder",
+                  "所属服务": "ts-order-service"
+                }
+              },
+              {
+                "id": "service:order",
+                "label": "服务",
+                "name": "ts-order-service",
+                "properties": {
+                  "标识": "service:order",
+                  "名称": "ts-order-service",
+                  "描述": "人工演示服务"
+                }
+              },
+              {
+                "id": "exchange:order",
+                "label": "交换机",
+                "name": "order.events",
+                "properties": {
+                  "标识": "exchange:order",
+                  "名称": "order.events"
+                }
+              },
+              {
+                "id": "queue:order",
+                "label": "队列",
+                "name": "order.queue",
+                "properties": {
+                  "标识": "queue:order",
+                  "名称": "order.queue"
+                }
+              },
+              {
+                "id": "method:sendNotification",
+                "label": "方法",
+                "name": "sendNotification",
+                "properties": {
+                  "标识": "method:sendNotification",
+                  "名称": "sendNotification",
+                  "所属服务": "ts-notification-service"
+                }
+              },
+              {
+                "id": "service:notification",
+                "label": "服务",
+                "name": "ts-notification-service",
+                "properties": {
+                  "标识": "service:notification",
+                  "名称": "ts-notification-service",
+                  "描述": "人工演示服务"
+                }
+              }
+            ],
+            "edges": [
+              {
+                "id": "e029",
+                "source": "method:placeOrder",
+                "target": "method:checkTicket",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e010",
+                "source": "method:checkTicket",
+                "target": "service:ticket",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e031",
+                "source": "method:checkTicket",
+                "target": "method:queryTravel",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e011",
+                "source": "method:queryTravel",
+                "target": "service:travel",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e035",
+                "source": "method:queryTravel",
+                "target": "method:queryRoute",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e012",
+                "source": "method:queryRoute",
+                "target": "service:route",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e030",
+                "source": "method:placeOrder",
+                "target": "method:payOrder",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e007",
+                "source": "method:payOrder",
+                "target": "service:payment",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e032",
+                "source": "method:payOrder",
+                "target": "method:charge",
+                "type": "调用",
+                "properties": {}
+              },
+              {
+                "id": "e008",
+                "source": "method:charge",
+                "target": "service:payment",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e033",
+                "source": "method:charge",
+                "target": "method:updateOrder",
+                "type": "RPC调用",
+                "properties": {}
+              },
+              {
+                "id": "e006",
+                "source": "method:updateOrder",
+                "target": "service:order",
+                "type": "属于",
+                "properties": {}
+              },
+              {
+                "id": "e042",
+                "source": "method:placeOrder",
+                "target": "exchange:order",
+                "type": "发布",
+                "properties": {}
+              },
+              {
+                "id": "e043",
+                "source": "exchange:order",
+                "target": "queue:order",
+                "type": "路由",
+                "properties": {}
+              },
+              {
+                "id": "e044",
+                "source": "queue:order",
+                "target": "method:sendNotification",
+                "type": "消费",
+                "properties": {}
+              },
+              {
+                "id": "e013",
+                "source": "method:sendNotification",
+                "target": "service:notification",
+                "type": "属于",
+                "properties": {}
+              }
+            ]
+          },
+          "truncated": false,
+          "durationMs": 0.11000000000000001
+        },
+        "actualNodeIds": [
+          "exchange:order",
+          "method:charge",
+          "method:checkTicket",
+          "method:payOrder",
+          "method:placeOrder",
+          "method:queryRoute",
+          "method:queryTravel",
+          "method:sendNotification",
+          "method:updateOrder",
+          "queue:order",
+          "service:notification",
+          "service:order",
+          "service:payment",
+          "service:route",
+          "service:ticket",
+          "service:travel"
+        ],
+        "actualServiceIds": [
+          "service:notification",
+          "service:order",
+          "service:payment",
+          "service:route",
+          "service:ticket",
+          "service:travel"
+        ],
+        "summary": "查询返回 7 条记录、16 个节点和 16 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 10,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-08",
+        "question": "查询 getOrder 方法",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": false,
+        "elapsedMs": 0,
+        "status": "needs_clarification",
+        "cypher": [],
+        "queries": [],
+        "actualResult": {
+          "columns": [],
+          "rows": [],
+          "graph": {
+            "nodes": [],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0
+        },
+        "actualNodeIds": [],
+        "actualServiceIds": [],
+        "summary": "存在多个匹配实体，请选择后继续。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 2,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-09",
+        "question": "查询 getOrder 方法",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": true,
+        "elapsedMs": 1,
+        "status": "success",
+        "cypher": [
+          "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit"
+        ],
+        "queries": [
+          {
+            "cypher": "MATCH (n) WHERE n.`名称` = $name OR n.`标识` = $entityId RETURN n LIMIT $limit",
+            "parameters": {
+              "name": "",
+              "entityId": "method:getOrder:order",
+              "limit": 100
+            },
+            "label": "定位实体节点"
+          }
+        ],
+        "actualResult": {
+          "columns": [
+            "n"
+          ],
+          "rows": [
+            {
+              "n": {
+                "id": "method:getOrder:order",
+                "label": "方法",
+                "name": "getOrder",
+                "properties": {
+                  "标识": "method:getOrder:order",
+                  "名称": "getOrder",
+                  "所属服务": "ts-order-service"
+                }
+              }
+            }
+          ],
+          "graph": {
+            "nodes": [
+              {
+                "id": "method:getOrder:order",
+                "label": "方法",
+                "name": "getOrder",
+                "properties": {
+                  "标识": "method:getOrder:order",
+                  "名称": "getOrder",
+                  "所属服务": "ts-order-service"
+                }
+              }
+            ],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0.01
+        },
+        "actualNodeIds": [
+          "method:getOrder:order"
+        ],
+        "actualServiceIds": [],
+        "summary": "查询返回 1 条记录、1 个节点和 0 条关系。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 6,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-10",
+        "question": "查询 getAllFood 方法",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": false,
+        "elapsedMs": 0,
+        "status": "rejected",
+        "cypher": [],
+        "queries": [],
+        "actualResult": {
+          "columns": [],
+          "rows": [],
+          "graph": {
+            "nodes": [],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0
+        },
+        "actualNodeIds": [],
+        "actualServiceIds": [],
+        "summary": "所选实体不属于本次候选",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 2,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-11",
+        "question": "删除所有节点",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": false,
+        "elapsedMs": 0,
+        "status": "rejected",
+        "cypher": [],
+        "queries": [],
+        "actualResult": {
+          "columns": [],
+          "rows": [],
+          "graph": {
+            "nodes": [],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0
+        },
+        "actualNodeIds": [],
+        "actualServiceIds": [],
+        "summary": "只读图谱任务不执行数据修改",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 1,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      },
+      {
+        "id": "DEV-12",
+        "question": "查询 doesNotExist 方法",
+        "category": "entity",
+        "complexity": "simple",
+        "passed": true,
+        "assertions": [],
+        "executionSuccessful": false,
+        "elapsedMs": 0,
+        "status": "empty",
+        "cypher": [],
+        "queries": [],
+        "actualResult": {
+          "columns": [],
+          "rows": [],
+          "graph": {
+            "nodes": [],
+            "edges": []
+          },
+          "truncated": false,
+          "durationMs": 0
+        },
+        "actualNodeIds": [],
+        "actualServiceIds": [],
+        "summary": "未找到匹配实体，请检查名称或使用更明确的实体标识。",
+        "source": {
+          "graph": "fixture",
+          "model": "demo",
+          "graphVersion": "fixture-train-ticket-v1",
+          "modelName": "demo-rules-v2",
+          "skillVersion": "2.0.0",
+          "runtime": "standalone-workbench"
+        },
+        "usage": {
+          "modelCalls": 0,
+          "toolCalls": 2,
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "estimatedCostCny": 0
+        },
+        "semanticReview": "pending-human-review"
+      }
+    ],
+    "totals": {
+      "total": 12,
+      "passed": 12,
+      "executionSuccessful": 8,
+      "elapsedMs": 16,
+      "modelCalls": 0,
+      "promptTokens": 0,
+      "completionTokens": 0,
+      "estimatedCostCny": 0,
+      "humanSemanticAccuracy": null
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "version": "1",
+  "method": "domain-concept-sparse-vectors",
+  "notes": "人工领域同义概念词表，不是预训练神经嵌入模型；由工具模块计算概念向量与词项混合相似度。",
+  "concepts": [
+    {
+      "id": "entity",
+      "terms": [
+        "实体",
+        "节点",
+        "对象",
+        "信息",
+        "entity",
+        "node"
+      ]
+    },
+    {
+      "id": "service",
+      "terms": [
+        "服务",
+        "微服务",
+        "service",
+        "microservice"
+      ]
+    },
+    {
+      "id": "method",
+      "terms": [
+        "方法",
+        "函数",
+        "method",
+        "function"
+      ]
+    },
+    {
+      "id": "filter",
+      "terms": [
+        "筛选",
+        "过滤",
+        "包含",
+        "含有",
+        "匹配",
+        "filter",
+        "contains"
+      ]
+    },
+    {
+      "id": "api",
+      "terms": [
+        "入口",
+        "接口",
+        "端点",
+        "API",
+        "endpoint",
+        "entry"
+      ]
+    },
+    {
+      "id": "downstream",
+      "terms": [
+        "下游",
+        "依赖",
+        "调用链",
+        "被调用",
+        "调用了",
+        "依赖对象",
+        "downstream",
+        "dependencies",
+        "callees"
+      ]
+    },
+    {
+      "id": "impact",
+      "terms": [
+        "上游",
+        "反向",
+        "影响",
+        "调用者",
+        "谁调用",
+        "受影响",
+        "牵连",
+        "依赖它",
+        "impact",
+        "upstream",
+        "callers"
+      ]
+    },
+    {
+      "id": "rpc",
+      "terms": [
+        "RPC",
+        "REST",
+        "同步",
+        "远程调用",
+        "HTTP",
+        "synchronous"
+      ]
+    },
+    {
+      "id": "mq",
+      "terms": [
+        "MQ",
+        "消息",
+        "异步",
+        "消息通信",
+        "事件通信",
+        "message",
+        "asynchronous"
+      ]
+    },
+    {
+      "id": "publisher",
+      "terms": [
+        "发布",
+        "生产",
+        "发送",
+        "发出事件",
+        "publisher",
+        "producer",
+        "publish"
+      ]
+    },
+    {
+      "id": "consumer",
+      "terms": [
+        "消费",
+        "接收",
+        "订阅",
+        "处理消息",
+        "consumer",
+        "subscriber",
+        "receive"
+      ]
+    },
+    {
+      "id": "queue",
+      "terms": [
+        "队列",
+        "消息队列",
+        "queue"
+      ]
+    },
+    {
+      "id": "exchange",
+      "terms": [
+        "交换机",
+        "路由",
+        "exchange",
+        "routing"
+      ]
+    },
+    {
+      "id": "combined",
+      "terms": [
+        "综合",
+        "联合",
+        "合并",
+        "汇总",
+        "同时",
+        "combined",
+        "union"
+      ]
+    }
+  ]
+}

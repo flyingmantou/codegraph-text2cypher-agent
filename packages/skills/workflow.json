@@ -1,0 +1,18 @@
+{
+  "id": "codegraph-text2cypher",
+  "version": "2.0.0",
+  "stages": [
+    "schema",
+    "plan",
+    "entities",
+    "examples",
+    "generate",
+    "validate",
+    "execute",
+    "merge",
+    "report"
+  ],
+  "maxBranches": 3,
+  "demoMode": "explicit-rules",
+  "liveMode": "model-uses-skill-and-tools"
+}

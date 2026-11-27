@@ -1,0 +1,51 @@
+{
+  "contractVersion": "2.0.0",
+  "owners": [
+    {
+      "id": "yi-zhenyu",
+      "name": "易震宇",
+      "module": "harness",
+      "paths": [
+        "packages/harness/",
+        "contracts/",
+        "docs/",
+        "scripts/",
+        "README.md",
+        "AGENTS.md",
+        "package.json",
+        "tsconfig.json",
+        ".gitignore",
+        ".env.example",
+        "Dockerfile",
+        ".dockerignore",
+        ".github/",
+        "ownership.json",
+        "package-lock.json"
+      ]
+    },
+    {
+      "id": "xu-jiale",
+      "name": "徐家乐",
+      "module": "skills",
+      "paths": [
+        "packages/skills/"
+      ]
+    },
+    {
+      "id": "yan-zhehan",
+      "name": "严喆瀚",
+      "module": "tools",
+      "paths": [
+        "packages/tools/"
+      ]
+    },
+    {
+      "id": "wang-wendi",
+      "name": "王雯迪",
+      "module": "web",
+      "paths": [
+        "apps/web/"
+      ]
+    }
+  ]
+}
